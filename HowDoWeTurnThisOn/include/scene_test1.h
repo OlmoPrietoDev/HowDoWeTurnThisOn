@@ -1,0 +1,28 @@
+#ifndef __SCENE_TEST1_H__
+#define __SCENE_TEST1_H__
+
+#include "scene.h"
+
+#include <iostream>
+
+#include <SFML/Graphics.hpp>
+
+class SceneTest1 : public Scene {
+  public:
+    SceneTest1();
+    ~SceneTest1() {}
+
+    virtual void loadAssets();
+    virtual void gameLoop();
+    virtual void processInput();
+    virtual void update();
+    virtual void draw();
+
+    void setRenderTarget(sf::RenderWindow *window);
+    
+  private:
+  sf::CircleShape circle_;
+  sf::RenderWindow *window_;
+};
+
+#endif // __SCENE_TEST1_H__
