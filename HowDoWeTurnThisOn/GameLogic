@@ -1,0 +1,38 @@
+Actions:
+
+ClickOwnUnit
+ClickMapBox
+ClickOutsideTheMap
+ClickEnemyUnit
+ClickEndTurnButton
+
+States:
+
+OwnUnitIsClicked
+
+Results:
+
+Movement
+Battle
+Nothing // Return to initial state
+EndTurn
+
+Logic:
+
+if ClickEndTurnButton
+	EndTurn
+
+else 
+	if !OwnUnitIsClicked 
+		if ClickOwnUnit
+			OwnUnitIsClicked
+		else if ClickAnyWhereElse
+			Nothing
+	else
+		if ClickOwnUnit or ClickOutsideTheMap
+			Nothing
+		else if ClickEnemyUnit or ClickMapBox
+			if BoxAchievable
+				Movement or Battle
+			else
+				Nothing 
