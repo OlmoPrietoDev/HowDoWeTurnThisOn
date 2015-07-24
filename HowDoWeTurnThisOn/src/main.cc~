@@ -1,0 +1,43 @@
+#include <SFML/Graphics.hpp>
+
+#include <iostream>
+
+#include "sprite.h"
+#include "renderer.h"
+
+int main() {
+  sf::RenderWindow window(sf::VideoMode(800, 640), "Testing");
+
+  Renderer::init(&window);
+
+  Sprite sprite("resources/tux.png");
+  sprite.setIsVisible(false);
+
+  sf::Texture texture;
+  texture.loadFromFile("resources/tux.png");
+  sf::Sprite *sprite3 = new sf::Sprite(texture);
+
+  std::cout << "size: " << Renderer::size() << std::endl;
+
+  //Renderer::deleteElement(&sprite);
+
+  std::cout << "size: " << Renderer::size() << std::endl;
+
+  while (window.isOpen()) {    
+    //window.clear();
+
+    sf::Event event;
+    while (window.pollEvent(event)) {
+      // Close window: exit
+      if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Num1)) {
+        
+      }
+    }
+
+    Renderer::draw();
+    //window.draw(sprite.getDrawable());
+    //window.display();
+  }
+
+  return 0;
+}
