@@ -19,7 +19,7 @@ class Renderer {
     static void draw();
     // it can be repeated
     static void registerElement(Sprite *element);
-    static void deleteElement(const Sprite &element);
+    static void deleteElement(Sprite *element);
     static int size();
 
   private:
