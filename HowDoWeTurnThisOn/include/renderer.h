@@ -8,7 +8,7 @@
 
 #include "sprite.h"
 
-// cacota
+// cacota sideral
 
 class Renderer {
   public:
