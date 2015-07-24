@@ -1,9 +1,0 @@
-#include "drawable_element.h"
-
-DrawableElement::DrawableElement() {
-  m_bIsVisible = true;
-}
-
-void DrawableElement::setIsVisible(bool state) {
-  m_bIsVisible = state;
-}
