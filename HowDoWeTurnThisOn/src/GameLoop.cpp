@@ -5,7 +5,7 @@
  *      Author: guillermo
  */
 
-#include "GameLoop.h"
+#include <GameLoop.h>
 
 GameLoop::GameLoop() {
 

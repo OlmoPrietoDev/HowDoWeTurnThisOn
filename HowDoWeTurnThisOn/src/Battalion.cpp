@@ -5,7 +5,7 @@
  *      Author: guillermo
  */
 
-#include "Battalion.h"
+#include <Battalion.h>
 
 Battalion::Battalion(int maxHP, int maxMovement, int damage, int x, int y) {
 

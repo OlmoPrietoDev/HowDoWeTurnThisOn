@@ -5,7 +5,7 @@
  *      Author: guillermo
  */
 
-#include "MouseConverter.h"
+#include <MouseConverter.h>
 
 MouseConverter::MouseConverter() {
 	// TODO Auto-generated constructor stub
