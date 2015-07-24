@@ -8,6 +8,8 @@
 
 #include "sprite.h"
 
+// cacota
+
 class Renderer {
   public:
     Renderer() {}
