@@ -16,7 +16,10 @@ class Renderer {
     Renderer(sf::RenderWindow *target);
     ~Renderer() {}
 
+    static void init();
     static void init(sf::RenderWindow *target);
+
+    static sf::RenderWindow *getRenderTarget();
 
     static void draw();
     // it can be repeated

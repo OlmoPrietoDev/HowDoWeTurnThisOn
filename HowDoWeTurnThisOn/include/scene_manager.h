@@ -18,23 +18,20 @@
 #include <vector>
 
 #include "scene.h"
+#include "stack.h"
 
 class SceneManager {
  public:
   static SceneManager* getInstance();
 
   // GETTERS
-  Scene* current_scene();
-  int getNumberOfScenes();
+  Scene* getCurrentScene();
+  unsigned int getNumberOfScenes();
+  float getDeltaTime();
+  float getGameElapsedTime();
 
-  // SETTERS
-  void set_current_scene(Scene *scene);
-  void set_current_scene(int id);
-
-  /// @brief Checks if scene is in the vector, and adds it if not
-  void registerScene(Scene *scene);
-  void changeToScene(std::string name);
-  void changeToScene(int id);
+  void pushScene(Scene *scene);
+  void popScene();
   /// @brief Calls the GameLoop of current_scene_
   void playCurrentScene();
 
@@ -42,12 +39,13 @@ class SceneManager {
 
  private:
   SceneManager();
-
-  std::vector<Scene*> scenes_;
-  Scene *current_scene_;
-
-  static SceneManager *instance_;
-
+  
+  static SceneManager *m_pInstance;
+  
+  stack<Scene*> m_stackScenes;
+  Scene *m_pCurrentScene;
+  float m_fDeltaTime;
+  float m_fElapsedTime;
 };
 
 #endif // __SCENE_MANAGER_H__

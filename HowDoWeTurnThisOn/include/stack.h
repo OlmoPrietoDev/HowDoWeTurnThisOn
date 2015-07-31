@@ -25,8 +25,8 @@ class stack {
     };
 
     // template <class T> T*    
-    T* getTop();
-    void push(T *data);
+    T getTop();
+    void push(T data);
     void pop();
     bool isEmpty();
     unsigned int size();
@@ -55,19 +55,19 @@ stack<T>::~stack() {
 }
 
 template <class T> 
-T* stack<T>::getTop() {
-  return top_->data_;
+T stack<T>::getTop() {
+  return *(top_->data_);
 }
 
 template <class T> 
-void stack<T>::push(T *data) {
+void stack<T>::push(T data) {
   Node *tmp = new Node();
   
   if (size_ == 0) {
     tmp->previous_ = NULL;
-    tmp->data_ = data;
+    *(tmp->data_) = data;
   } else {
-    tmp->data_ = data;
+    *(tmp->data_) = data;
     tmp->previous_ = top_;
   }
 

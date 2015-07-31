@@ -21,29 +21,29 @@ class Scene {
   void init(int id, std::string name);
 
   // GETTERS
-  bool exit_scene() const;
-  int id() const;
-  std::string name() const;
+  bool getExitSceneState() const;
+  int getId() const;
+  std::string getName() const;
 
   // SETTERS
-  void set_exit_scene(bool state);
+  void setExitSceneState(bool state);
 
-  virtual void loadAssets() = 0;
+  virtual void loadAssets();
   virtual void gameLoop() = 0;
-  virtual void processInput() = 0;
-  virtual void update() = 0;
-  virtual void draw() = 0;
+  virtual void processInput();
+  virtual void update();
+  virtual void draw();
 
   virtual ~Scene(){};
 
  private:
  protected:
-  /// @brief It tells when you want to exit the scene. Not used
-  bool exit_scene_;
-  /// @brief The scene manager uses it to change between scenes
-  int id_;
-  /// @brief The scene manager uses it to change between scenes
-  std::string name_;
+  /// @brief It tells when you want to exit the scene
+  bool m_bExitScene;
+  int m_iId;
+  std::string m_sName;
+  
+  float m_fElapsedTime;
 };
 
 #endif // __SCENE_H__
